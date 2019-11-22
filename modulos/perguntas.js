@@ -46,7 +46,7 @@ module.exports = {
             message : "Conta paga?"
         },
     ],
-    perguntas_internet : [
+    perguntas_telecomunicacoes : [
         {
             type: "input",
             name: "categoria",
