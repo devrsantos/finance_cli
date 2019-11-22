@@ -77,5 +77,42 @@ module.exports = {
             name: "check_pagamento",
             message: "Conta paga?"
         }
+    ],
+    perguntas_transporte_aplicativos: [
+        {
+            type: "input",
+            name: "categoria",
+            message: "Qual é a categoria da despesa?"
+        },
+        {
+            type: "input",
+            name: "empresa",
+            message: "Qual é o nome da empresa?"
+        },
+        {
+            type: "input",
+            name: "valor",
+            message: "Qual é o valor da despesa?"
+        },
+        {
+            type: "input",
+            name: "data_solicitacao",
+            message: "Qual é a data da solicitação?"
+        },
+        {
+            type: "input",
+            name: "local_destino",
+            message: "Qual é o local de destino?"
+        },
+        {
+            type: "input",
+            name: "motorista",
+            message: "Qual é o nome do motorista?"
+        },
+        {
+            type: "confirm",
+            name: "check_pagamento",
+            message: "Conta paga?"
+        }
     ]
 }
