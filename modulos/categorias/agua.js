@@ -2,6 +2,7 @@ const Table = require('cli-table');
 const table = new Table();
 
 const mes = require('../meses');
+const { incluir, consultar } = require('./../mongodb/crud');
 
 const tabela = (respostas) => {
     const arr_cabecalho = [];

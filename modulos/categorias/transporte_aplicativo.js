@@ -14,11 +14,12 @@ const tabela = (respostas) => {
 
     table.push({ [arr_cabecalho[0]]: respostas.categoria.toUpperCase() });
     table.push({ [arr_cabecalho[1]]: respostas.empresa.toUpperCase() });
-    table.push({ [arr_cabecalho[2]]: `R$ ${respostas.valor.replace(".", ",")}` });
+    table.push({ [arr_cabecalho[2]]: respostas.valor.length == 2 ? `R$ ${respostas.valor},00` : `R$ ${respostas.valor.replace(".", ",")}` });
     table.push({ [arr_cabecalho[3]]: respostas.data_solicitacao});
     table.push({ [arr_cabecalho[4]]: respostas.local_destino.toUpperCase() });
     table.push({ [arr_cabecalho[5]]: respostas.motorista.toUpperCase() });
     table.push({ [arr_cabecalho[6]]: respostas.check_pagamento ? "PAGO" : "PENDENTE" });
+    table.push({ [arr_cabecalho[7]]: respostas.forma_pagamento.toUpperCase() });
 
     console.log(table.toString());
 };
@@ -31,7 +32,8 @@ const dataBase = (dados) => {
         data_solicitacao: dados.data_solicitacao,
         local_destino: dados.local_destino,
         motorista: dados.motorista,
-        check_pagamento: dados.check_pagamento ? "PAGO" : "PENDENTE"
+        check_pagamento: dados.check_pagamento ? "PAGO" : "PENDENTE",
+        forma_pagamento: dados.forma_pagamento
     };
     console.log(despesa)
 };

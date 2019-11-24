@@ -59,6 +59,11 @@ module.exports = {
         },
         {
             type: "input",
+            name: "plano",
+            message: "Qual é o plano?"
+        },
+        {
+            type: "input",
             name: "valor",
             message: "Qual é o valor da despesa?"
         },
@@ -113,6 +118,43 @@ module.exports = {
             type: "confirm",
             name: "check_pagamento",
             message: "Conta paga?"
+        },
+        {
+            type: "input",
+            name: "forma_pagamento",
+            message: "Qual é a forma de pagamento?"
+        }
+    ],
+    perguntas_racao: [
+        {
+            type: "input",
+            name: "categoria",
+            message: "Qual é a categoria da despesa?"
+        },
+        {
+            type: "input",
+            name: "empresa",
+            message: "Qual é o nome da empresa?"
+        },
+        {
+            type: "input",
+            name: "valor",
+            message: "Qual é o valor da despesa?"
+        },
+        {
+            type: "input",
+            name: "tamanho",
+            message: "Qual é o tamanho do pacote?"
+        },
+        {
+            type: "confirm",
+            name: "check_pagamento",
+            message: "Conta paga?"
+        },
+        {
+            type: "input",
+            name: "forma_pagamento",
+            message: "Qual é a forma de pagamento?"
         }
     ]
 }

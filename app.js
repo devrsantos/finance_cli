@@ -5,8 +5,15 @@ const fn_luz = require('./modulos/categorias/luz');
 const fn_agua = require('./modulos/categorias/agua');
 const fn_internet = require('./modulos/categorias/internet');
 const fn_telefonia = require('./modulos/categorias/telefonia');
+const fn_racao = require('./modulos/categorias/racao');
 const fn_transporte_aplicativos = require('./modulos/categorias/transporte_aplicativo');
-const { perguntas_luz_ou_agua, perguntas_telecomunicacoes, perguntas_transporte_aplicativos } = require('./modulos/perguntas');
+
+const {
+    perguntas_luz_ou_agua,
+    perguntas_telecomunicacoes,
+    perguntas_transporte_aplicativos,
+    perguntas_racao
+} = require('./modulos/perguntas');
 
 const luz = (perguntas) => {
     inquirer.prompt(perguntas).then(respostas => {
@@ -38,12 +45,18 @@ const transporte_aplicativos = (perguntas) => {
     });
 };
 
+const racao = (perguntas) => {
+    inquirer.prompt(perguntas).then(respostas => {
+        fn_racao(respostas);
+    });
+};
 
 program
     .option('-l, --luz', 'Despesa de Luz')
     .option('-a, --agua', 'Despesa de Água')
     .option('-i, --internet', 'Despesa de Internet')
     .option('-t, --telefonia', 'Despesa de Telefonia')
+    .option('-r, --racao', 'Despesa de Racao')
     .option('-u, --transporte_aplicativos', 'Despesa de Transporte Aplicativos');
 
 program.parse(process.argv);
@@ -66,4 +79,8 @@ if (program.telefonia) {
 
 if (program.transporte_aplicativos) {
     transporte_aplicativos(perguntas_transporte_aplicativos);
+};
+
+if (program.racao) {
+    racao(perguntas_racao);
 };
